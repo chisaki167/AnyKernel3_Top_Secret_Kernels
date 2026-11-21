@@ -553,7 +553,8 @@ jobs:
                 # REPO_OWNER/REPO_NAME/GITHUB_API_BASE 仍是旧的 SukiSU-Nova/SukiSU-Nova
                 # + api.github.com 元数据（对应已 404 的旧 fork）；这里只迁移版本标识
                 # 到 shirkneko/SukiSU + zako Forgejo，保持 builtin 的 SUSFS 源码形态不变。
-                python3 "$GITHUB_WORKSPACE/scripts/ksu_uapi_sync/migrate_builtin_metadata.py" KernelSU/kernel/Makefile
+                # python3 "$GITHUB_WORKSPACE/scripts/ksu_uapi_sync/migrate_builtin_metadata.py" KernelSU/kernel/Makefile
+                echo "skip"
               fi
               if [ -n "$KSU_COMMIT" ] && [ "$BRANCH" != "main" ] && [ "$BRANCH" != "builtin" ]; then
                 echo "SukiSU-Nova 使用自定义提交（$BRANCH），跳过管理器版本对齐"
